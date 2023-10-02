@@ -112,7 +112,7 @@ fun main() {
     }
 
     var elSistemaEstaAbierto = true
-    var opcion = ""
+    var opcion: String
 
     while (elSistemaEstaAbierto == true){
         println("¿Qué te gustaría hacer?")
