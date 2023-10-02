@@ -1,5 +1,3 @@
-import kotlin.reflect.typeOf
-
 fun main() {
     println("BIENVENIDO AL SISTEMA DE TU CUENTA BANCARIA")
     println("¿Qué tipo de cuenta te gustaría crear?")
@@ -7,18 +5,18 @@ fun main() {
     println("2. Cuenta de crédito")
     println("3. Cuenta corriente")
 
-    var tipoDeCuenta: String = ""
+    var tipoDeCuenta = ""
 
     while (tipoDeCuenta == "") {
         println("Escoge una opción (1, 2, 3)")
-        tipoDeCuenta = readln().toString()
+        tipoDeCuenta = readln()
         println("La opción que elegiste es ${tipoDeCuenta}.")
 
-        when (tipoDeCuenta) {
-            "1" -> tipoDeCuenta = "Cuenta de débito"
-            "2" -> tipoDeCuenta = "Cuenta de crédito"
-            "3" -> tipoDeCuenta = "Cuenta corriente"
-            else -> tipoDeCuenta = ""
+        tipoDeCuenta = when (tipoDeCuenta) {
+            "1" -> "Cuenta de débito"
+            "2" -> "Cuenta de crédito"
+            "3" -> "Cuenta corriente"
+            else -> ""
         }
     }
 
@@ -114,7 +112,7 @@ fun main() {
     }
 
     var elSistemaEstaAbierto = true
-    var opcion:String = ""
+    var opcion = ""
 
     while (elSistemaEstaAbierto == true){
         println("¿Qué te gustaría hacer?")
@@ -124,13 +122,13 @@ fun main() {
         println("4. Cerrar el sistema")
         println("Escoge una opción (1, 2, 3, 4)")
 
-        opcion = readln().toString()
+        opcion = readln()
         println("La opción que elegiste es el número ${opcion}.")
 
         when (opcion){
             "1" -> println("Ahora tienes $balanceDeCuenta soles.")
             "2" -> {
-                var dinero:Int=0
+                var dinero: Int
                 println("¿Cuánto dinero te gustaría retirar?")
                 try {
                     dinero = readln().toInt()
@@ -142,7 +140,7 @@ fun main() {
 
             }
             "3" -> {
-                var dinero:Int=0
+                var dinero: Int
                 println("¿Cuánto dinero te gustaría depositar?")
                 try {
                     dinero = readln().toInt()
